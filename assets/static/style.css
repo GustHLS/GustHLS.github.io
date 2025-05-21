@@ -321,29 +321,6 @@ body.dark .home .text{
     100% { opacity: 1; }
 }
 
-.underline {
-    display: inline-block;
-    height: 2px;
-    background-color: #000;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: width 0.1s ease;
-}
-
-body.dark .underline{
-    background-color: #fff;
-}
-
-body.dark .text_underline{
-    margin-bottom: 35px;
-    border-bottom: 2px solid #FFF;
-    display: inline;
-    padding-bottom: 15px;
-    width: 9%;
-    transition: var(--tran-05);
-}
-
 body.dark .project {
     background: var(--sidebar-color); 
 }
@@ -385,6 +362,18 @@ body.dark .projects-grid a{
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.container h2{
+    word-break: break-word;
+}
+
+.typed {
+    white-space: normal !important;
+    word-break: break-word;
 }
 
 #top{

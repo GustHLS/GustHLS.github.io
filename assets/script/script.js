@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let isDeleting = false;
         let text = '';
         let interval;
-        const underline = element.parentElement.querySelector('.underline');
 
         function type() {
             if (isDeleting) {
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             element.textContent = text;
-            underline.style.width = `${element.offsetWidth}px`; // Ajusta a largura do sublinhado
             
             if (currentCharIndex === items[currentItemIndex].length + 1) {
                 isDeleting = true;
