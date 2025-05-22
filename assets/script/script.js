@@ -133,7 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
             "phoneText": "Phone",
             "emailText": "E-mail",
             "countryText": "Country",
-            "cityText": "City"
+            "cityText": "City",
+            "skillsText": "Skills",
         },
         "pt": {
             "home": "Início",
@@ -155,7 +156,8 @@ document.addEventListener('DOMContentLoaded', function () {
             "phoneText": "Telefone",
             "emailText": "E-mail",
             "countryText": "País",
-            "cityText": "Cidade"
+            "cityText": "Cidade",
+            "skillsText": "Habilidades",
         }
     };
 
@@ -258,6 +260,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 ageElement.textContent = age;
             }
         }
+
+        const skillsText = document.querySelector('#resume .content .text_skills');
+        if (skillsText) skillsText.textContent = translations[lang].skills;
         
         // Atualiza o texto do modo escuro/claro
         if (modeText) {
