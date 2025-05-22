@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "containerTxt": "Estou <span class='typed-container'> <span class='typed' data-typed-items='criando bugs desde 2020., Desenvolvedor Full-Stack.'></span></span>",
             "about": "Sobre",
             "textContainer": "Meu nome é Gustavo Henrique Lourenço Santinho e me formei em Análise e Desenvolvimento de Sistemas pela Universidade Nove de Julho em 07/2022. Durante meu tempo na universidade, aprendi: Programação e Desenvolvimento de Software, Fundamentos de Programação, Desenvolvimento Web, Gerenciamento de Banco de Dados, Engenharia de Software, Arquitetura de Sistemas, Segurança da Informação e Análise de Sistemas.",
-            "textContainerInfo": "Tenho experiência profissional em desenvolvimento fullstack com Python desde 2022, quando comecei na DiSantinni. Trabalho na criação de softwares em Python voltados para otimizações internas ou análises. Meu maior projeto foi um calculador de escala de plantões, que gerava escalas automáticas de acordo com o saldo de horas de cada atendente no banco de dados e a resposta do solucionador CPLEX.",
+            "textContainerInfo": "Tenho experiência profissional em desenvolvimento fullstack com Python desde 2022, quando comecei na DiSantinni. Trabalho na criação de softwares em Python voltados para otimizações internas ou análises. Meu maior projeto foi uma calculadora de escala de atendentes, que gerava escalas automáticas de acordo com o saldo de horas de cada atendente no banco de dados e a resposta do solucionador CPLEX.",
             "textInfo": "Informações",
             "birthdayText": "Data de nascimento",
             "ageText": "Idade",
