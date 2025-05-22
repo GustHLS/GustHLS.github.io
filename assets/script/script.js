@@ -135,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "countryText": "Country",
             "cityText": "City",
             "skillsText": "Skills",
+            "projectsText": "Projects",
         },
         "pt": {
             "home": "Início",
@@ -158,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "countryText": "País",
             "cityText": "Cidade",
             "skillsText": "Habilidades",
+            "projectsText": "Projetos",
         }
     };
 
@@ -264,6 +266,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const skillsText = document.querySelector('#resume .content .text_skills');
         if (skillsText) skillsText.textContent = translations[lang].skills;
         
+        const projectsText = document.querySelector('#projects .content .text_projects');
+        if (projectsText) projectsText.textContent = translations[lang].projects;
+
         // Atualiza o texto do modo escuro/claro
         if (modeText) {
             modeText.textContent = body.classList.contains('dark') ? 
