@@ -123,7 +123,17 @@ document.addEventListener('DOMContentLoaded', function () {
             "darkMode": "Dark mode",
             "lightMode": "Light mode",
             "profession": "Full-Stack Developer",
-            "containerTxt": "I'm <span class='typed-container'> <span class='typed' data-typed-items='creating bugs since 2020., Full-Stack Developer.'></span></span>"
+            "containerTxt": "I'm <span class='typed-container'> <span class='typed' data-typed-items='creating bugs since 2020., Full-Stack Developer.'></span></span>",
+            "about": "About",
+            "textContainer": "My name is Gustavo Henrique Lourenço Santinho, and I graduated in Systems Analysis and Development from Universidade Nove de Julho in 07/2022. During my time at the university, I learned: Software Programming and Development, Fundamentals of Programming, Web Development, Database Management, Software Engineering, Systems Architecture, Information Security, and Systems Analysis.",
+            "textContainerInfo": "I have professional experience in fullstack development using Python since 2022, when I started at DiSantinni. I work on creating software using Python for internal optimizations or analyses. My biggest project was a shift scheduling calculator, which generated automatic schedules according to the hour balance of each attendant in the database and the response from the CPLEX solver.",
+            "textInfo": "Information",
+            "birthdayText": "Birthday",
+            "ageText": "Age",
+            "phoneText": "Phone",
+            "emailText": "E-mail",
+            "countryText": "Country",
+            "cityText": "City"
         },
         "pt": {
             "home": "Início",
@@ -135,7 +145,17 @@ document.addEventListener('DOMContentLoaded', function () {
             "darkMode": "Modo escuro",
             "lightMode": "Modo claro",
             "profession": "Dev Full-Stack",
-            "containerTxt": "Estou <span class='typed-container'> <span class='typed' data-typed-items='criando bugs desde 2020., Desenvolvedor Full-Stack.'></span></span>"
+            "containerTxt": "Estou <span class='typed-container'> <span class='typed' data-typed-items='criando bugs desde 2020., Desenvolvedor Full-Stack.'></span></span>",
+            "about": "Sobre",
+            "textContainer": "Meu nome é Gustavo Henrique Lourenço Santinho e me formei em Análise e Desenvolvimento de Sistemas pela Universidade Nove de Julho em 07/2022. Durante meu tempo na universidade, aprendi: Programação e Desenvolvimento de Software, Fundamentos de Programação, Desenvolvimento Web, Gerenciamento de Banco de Dados, Engenharia de Software, Arquitetura de Sistemas, Segurança da Informação e Análise de Sistemas.",
+            "textContainerInfo": "Tenho experiência profissional em desenvolvimento fullstack com Python desde 2022, quando comecei na DiSantinni. Trabalho na criação de softwares em Python voltados para otimizações internas ou análises. Meu maior projeto foi um calculador de escala de plantões, que gerava escalas automáticas de acordo com o saldo de horas de cada atendente no banco de dados e a resposta do solucionador CPLEX.",
+            "textInfo": "Informações",
+            "birthdayText": "Data de nascimento",
+            "ageText": "Idade",
+            "phoneText": "Telefone",
+            "emailText": "E-mail",
+            "countryText": "País",
+            "cityText": "Cidade"
         }
     };
 
@@ -184,16 +204,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const professionText = document.querySelector('.profession');
         if (professionText) professionText.textContent = translations[lang].profession;
-        
+
         const containerText = document.querySelector('.container p');
         if (containerText) {
             containerText.innerHTML = translations[lang].containerTxt;
             
-            // Reinicializa o efeito de digitação após alterar o HTML
             const newTypedElement = document.querySelector('.typed');
             if (newTypedElement) {
                 const typedItems = newTypedElement.getAttribute('data-typed-items').split(', ').map(item => item.trim());
                 typeEffect(newTypedElement, typedItems);
+            }
+        }
+
+        const aboutText = document.querySelector('#about .content .text_about');
+        if (aboutText) aboutText.textContent = translations[lang].about;
+
+        const textContainer = document.querySelector('#about .content .text_container');
+        if (textContainer) textContainer.textContent = translations[lang].textContainer;
+
+        const textContainerInfo = document.querySelector('#about .content .text_container_info');
+        if (textContainerInfo) textContainerInfo.textContent = translations[lang].textContainerInfo;
+
+        const textInfo = document.querySelector('#about .content .text_info');
+        if (textInfo) textInfo.textContent = translations[lang].textInfo;
+
+        // Atualiza a lista de informações completa
+        const infoList = document.querySelector('#info');
+        if (infoList) {
+            infoList.innerHTML = `
+                <li><i class='bx bx-chevron-right'></i><strong>${translations[lang].birthdayText}: </strong>${lang === 'en' ? '03/10/2002' : '10/03/2002'}</li>
+                <li><i class='bx bx-chevron-right'></i><strong>${translations[lang].ageText}: </strong><span id="age"></span></li>
+                <li><i class='bx bx-chevron-right'></i><strong>${translations[lang].phoneText}: </strong>+5511987670355</li>
+                <li><i class='bx bx-chevron-right'></i><strong>${translations[lang].emailText}: </strong>gustavohls.dev@gmail.com</li>
+                <li><i class='bx bx-chevron-right'></i><strong>${translations[lang].countryText}: </strong>${lang === 'en' ? 'Brazil' : 'Brasil'}</li>
+                <li><i class='bx bx-chevron-right'></i><strong>${translations[lang].cityText}: </strong>São Paulo</li>
+            `;
+            
+            // Recalcula a idade após atualizar o HTML
+            const ageElement = document.getElementById('age');
+            if (ageElement) {
+                const birthDate = new Date(2002, 2, 10);
+                const currentDate = new Date();
+                
+                let age = currentDate.getFullYear() - birthDate.getFullYear();
+                
+                const isBeforeBirthday = (currentDate.getMonth() < birthDate.getMonth()) || 
+                                      (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate());
+                
+                if (isBeforeBirthday) {
+                    age--;
+                }
+                
+                ageElement.textContent = age;
             }
         }
         

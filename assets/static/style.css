@@ -350,7 +350,7 @@ body.dark .projects-grid a{
     transition: var(--tran-05);
 }
 
-.text_container{
+.text_container, .text_container_info{
     margin-left: 30px;
     margin-top: 70px;
     font-size: 15px;
